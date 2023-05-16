@@ -7,7 +7,7 @@ let energy = 0;
 //let magnetization = 0;
 let iterations = 0;
 let increaseTemp = false;
-let maxIterations = 300000;
+let maxIterations = 500000;
 //se define H= -2 y se agrega a calculateenergy
 let H=-25;
 let J=0; 
@@ -157,13 +157,13 @@ function setup() {
 function draw() {
     // Increase the external field H
     if (H <= 25) {
-      H += 0.030;//0.030
+      H += 0.10;//0.030
       
     }
    
   
     // Perform Metropolis updates
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 1000; i++) {
       if (iterations < maxIterations) { 
         metropolis(H);}
       if(iterations==maxIterations){
@@ -207,9 +207,6 @@ function draw() {
     plot.drawLines();
     plot.drawPoints();
     
-    //image(graphCanvas, gridSize*spinSize + graphMargin, graphMargin);
-    //image(graphCanvas, 550, 550);
-    
 
   }
   //Cambiar temperatura
@@ -244,6 +241,7 @@ function resetSimulation() {
     //calculateEnergy(i,j);
     calculateMagnetization();
     iterations = 0;
+    //plot.clear();
   }
   //Cambiar J
   let JButton = document.querySelector("#J-button");
@@ -258,10 +256,10 @@ function resetSimulation() {
   });
 
   function botonesConf() {
-    fill(150);
+    //fill(150);
     //rect(820, 500, 305, 55);
     //square(840, 500, 100);
-    fill(255);
+    //fill(255);
     encender = createButton("Continuar");
     encender.position(800,20);
     encender.mousePressed(loop);
@@ -272,11 +270,13 @@ function resetSimulation() {
 
     reiniciar = createButton("Reiniciar");
     reiniciar.position(900, 20);
-    reiniciar.mousePressed(resetSimulation);
+    reiniciar.mousePressed();
+    
 
+    fill(0);
     
     //text("Botones de configuracion:", HEIGHT + 250, 520);
-    fill(0);
+    
 }
 
 

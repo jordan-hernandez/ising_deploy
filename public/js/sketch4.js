@@ -9,7 +9,7 @@ let iterations = 0;
 let increaseTemp = false;
 let maxIterations = 300000;
 //se define H= -2 y se agrega a calculateenergy
-let H=-20;
+let H=-25;
 let J=0; 
 let graphSize = 200;
 let graphMargin = 10;
@@ -131,9 +131,9 @@ function setup() {
       plot = new GPlot(this, 800,0, width-800, height);
       plot.setTitleText("Magnetización vs Campo magnético");
       
-      plot.getXAxis().setAxisLabelText("Campo magnético [Oe]"); 
+      plot.getXAxis().setAxisLabelText("Campo magnético H"); 
       plot.getYAxis().setNTicks(10);
-      plot.getYAxis().setAxisLabelText("Magnetizacion promedio [A/m]");
+      plot.getYAxis().setAxisLabelText("Magnetizacion promedio");
       plot.setXLim(-25, 25);
       plot.setYLim(-2500, 2500);
       
@@ -156,7 +156,7 @@ function setup() {
 
 function draw() {
     // Increase the external field H
-    if (H <= 20) {
+    if (H <= 25) {
       H += 0.030;//0.030
       
     }
@@ -238,7 +238,7 @@ function draw() {
 function resetSimulation() {
     //temperature = 6;
      
-    H = -20;
+    H = -25;
     spins = [];
     initializeSpins();
     //calculateEnergy(i,j);

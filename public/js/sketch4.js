@@ -142,7 +142,7 @@ function setup() {
     
       plot.setLineColor(120);
       plot.setLineWidth(1);
-    
+      
       
       //setFrameRate(1);
     
@@ -261,16 +261,16 @@ function resetSimulation() {
     //square(840, 500, 100);
     //fill(255);
     encender = createButton("Continuar");
-    encender.position(800,20);
+    encender.position(810,20);
     encender.mousePressed(loop);
     
      apagar = createButton("Pausar");
-     apagar.position(700, 20);
+     apagar.position(750, 20);
      apagar.mousePressed(noLoop);
 
     reiniciar = createButton("Reiniciar");
-    reiniciar.position(900, 20);
-    reiniciar.mousePressed();
+    reiniciar.position(890, 20);
+    reiniciar.mousePressed(reset);
     
 
     fill(0);
@@ -280,6 +280,9 @@ function resetSimulation() {
 }
 
 
+function reset() {
 
+  setup();
+}
 
 

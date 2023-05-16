@@ -1,6 +1,6 @@
 // Define variables
 let gridSize = 50;
-let spinSize = 14;// 14 y sumar 100 al canvas 
+let spinSize = 13;// 14 y sumar 100 al canvas 
 let temperature = 6; //funciona muy bien con temperature = 0.01
 let spins = [];
 let energy = 0;

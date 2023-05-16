@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.button {
+  background-color: #4CAF50; /* Cambia el color de fondo */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px; /* Agrega bordes redondeados */
+  box-shadow: 0 5px #2B8CBE; /* Agrega sombra */
+}
+
+/* Estilo al pasar el cursor por encima del botón */
+.button:hover {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #2B8CBE;
+}

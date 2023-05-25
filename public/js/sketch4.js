@@ -18,23 +18,23 @@ let plot;
 
 // Initializes the spin lattice
 function initializeSpins() {
-    for (let i = 0; i < gridSize; i++) {
-        spins[i] = [];
-        for (let j = 0; j < gridSize; j++) {
-          spins[i][j] = -1; // Set all spins to 1
-        }
-      }
+    // for (let i = 0; i < gridSize; i++) {
+    //     spins[i] = [];
+    //     for (let j = 0; j < gridSize; j++) {
+    //       spins[i][j] = -1; // Set all spins to 1
+    //     }
+    //   }
   
-//   for (let i = 0; i < gridSize; i++) {
-//     spins[i] = [];
-//     for (let j = 0; j < gridSize; j++) {
-//       if (random() > 0.5) {
-//         spins[i][j] = 1;
-//       } else {
-//         spins[i][j] = -1;
-//       }
-//     }
-//   }
+  for (let i = 0; i < gridSize; i++) {
+    spins[i] = [];
+    for (let j = 0; j < gridSize; j++) {
+      if (random() > 0.5) {
+        spins[i][j] = 1;
+      } else {
+        spins[i][j] = -1;
+      }
+    }
+  }
 }
 
 // Calculates the energy of the system
@@ -53,7 +53,7 @@ function calculateEnergy(i,j,H,s) {
   energy /= 2;
 }
 
-// Calculates the magnetization of the system
+// Cal88culates the magnetization of the system
 function calculateMagnetization() {
   magnetization = 0;
   for (let i = 0; i < gridSize; i++) {
@@ -119,7 +119,7 @@ function increaseTemperature() {
 
 function setup() {
     createCanvas(gridSize*spinSize*2+100, gridSize*spinSize);
-    
+    /*
     graphCanvas = createGraphics(graphSize*3, graphSize*3);
     graphCanvas.background(250);
     //graphCanvas.stroke(0);
@@ -127,6 +127,7 @@ function setup() {
     graphCanvas.line(graphMargin, graphSize - graphMargin, graphSize - graphMargin, graphSize - graphMargin);
     graphCanvas.line(graphMargin, graphMargin, graphMargin, graphSize - graphMargin);
     graphCanvas.stroke(255, 0, 0);
+    */
       // Crear un objeto GPlot
       plot = new GPlot(this, 800,0, width-800, height);
       plot.setTitleText("Magnetización vs Campo magnético");
